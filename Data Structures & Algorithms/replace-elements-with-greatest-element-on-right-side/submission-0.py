@@ -1,0 +1,16 @@
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        max_num = 0
+        for i in range(len(arr) - 1, -1, -1):
+            curr_num = arr[i]
+
+            arr[i] = max_num
+
+            if curr_num > max_num:
+                max_num = curr_num
+            
+            
+            if i == len(arr) - 1:
+                arr[i] = -1
+        
+        return arr
